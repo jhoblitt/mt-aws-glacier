@@ -269,7 +269,7 @@ sub get_config
 		
 		for (option('concurrency', type => 'i', default => 4)) {
 			validation $_, $must_be_an_integer, stop => 1, sub { $_ =~ /^\d+$/ };
-			validation $_, message('Max concurrency is 30,  Min is 1'), sub { $_ >= 1 && $_ <= 30 };
+			validation $_, message('Max concurrency is 64,  Min is 1'), sub { $_ >= 1 && $_ <= 64 };
 		}
 		
 		for (option('check-max-file-size', type => 'i')) {

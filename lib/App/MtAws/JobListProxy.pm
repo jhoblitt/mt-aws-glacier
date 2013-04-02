@@ -52,7 +52,7 @@ sub get_task
 {
 	my ($self) = @_;
 	if (scalar @{$self->{jobs_a}}) {
-		my $maxcnt = 30;
+		my $maxcnt = 64;
 		for my $job (@{$self->{jobs_a}}) {
 			my ($status, $task) = $job->{job}->get_task();
 			if ($status eq 'wait') {
